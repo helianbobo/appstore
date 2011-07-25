@@ -65,6 +65,8 @@ environments {
 
 }
 
+android.serverURL = "http://10.0.2.2:8080/${appName}"
+
 // log4j configuration
 log4j = {
     // Example of changing the log pattern for the default console

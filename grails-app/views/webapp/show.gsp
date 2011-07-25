@@ -68,7 +68,7 @@
                                                                           default="Package Url"/></span>
 
             <span class="property-value" aria-labelledby="packageUrl-label">
-              <g:link url="${webappInstance.packageUrl}">Download</g:link>
+              <g:link uri="${webappInstance.packageUrl}">Download</g:link>
             </span>
 
           </li>

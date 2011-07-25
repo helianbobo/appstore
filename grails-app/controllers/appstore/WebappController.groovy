@@ -20,7 +20,20 @@ class WebappController {
                 [webappInstanceList: list, webappInstanceTotal: Webapp.count()]
             }
             json {
-                render list as JSON
+
+                render(contentType: "text/json") {
+                    apps = array {
+                        list.each {Webapp webapp ->
+                            app {
+                                name = webapp.name
+                                description = webapp.description
+                                imageUrl = grailsApplication.config.android.serverURL.toString() + webapp.imageUrl
+                                packageUrl = grailsApplication.config.android.serverURL.toString() + webapp.packageUrl
+                            }
+                        }
+                    }
+
+                }
             }
         }
 
@@ -119,7 +132,7 @@ class WebappController {
             def newFile = new File(location + packageFileName + '.zip')
             packageFile.transferTo(newFile)
 
-            webappInstance.packageUrl = grailsApplication.config.grails.serverURL.toString() + "/packages/${packageFileName}.zip"
+            webappInstance.packageUrl = "/packages/${packageFileName}.zip"
         }
     }
 

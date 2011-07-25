@@ -6,8 +6,9 @@ class BootStrap {
 
     def init = { servletContext ->
 
-        def packageFileUrl = grailsApplication.config.grails.serverURL.toString() + "/packages/angrybirds.zip"
-        new Webapp(name:"Angry Birds", description: "Some Hot Game.", imageUrl: "/images/apps/angry-bird.jpg", packageUrl: packageFileUrl).save()
+        def packageFileUrl = "/packages/angrybirds.zip"
+        def imageUrl = "/images/apps/angry-bird.jpg"
+        new Webapp(name:"Angry Birds", description: "Some Hot Game.", imageUrl: imageUrl, packageUrl: packageFileUrl).save()
 
     }
     def destroy = {

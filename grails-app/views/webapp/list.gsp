@@ -59,7 +59,7 @@
 
 
             <td>
-              <g:link url="${webappInstance.packageUrl}">Download</g:link>
+              <g:link uri="${webappInstance.packageUrl}">Download</g:link>
             </td>
 
           </tr>
