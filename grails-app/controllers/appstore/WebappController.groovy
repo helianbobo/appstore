@@ -25,6 +25,7 @@ class WebappController {
                     apps = array {
                         list.each {Webapp webapp ->
                             app {
+                                id = webapp.id
                                 name = webapp.name
                                 description = webapp.description
                                 imageUrl = grailsApplication.config.android.serverURL.toString() + webapp.imageUrl
